@@ -452,14 +452,19 @@ The output of the query provides the following insights.
 ### Key Insights
 Based on the analysis, the key insights are:
 
-1. **Top-Paying Data Analyst Jobs**: The highest-paying jobs for data analysts that allow remote work offer a wide range of salaries, the highest at $650,000!
-2. **Skills for Top-Paying Jobs**: High-paying data analyst jobs require advanced proficiency in SQL, suggesting it’s a critical skill for earning a top salary.
-3. **Most In-Demand Skills**: SQL is also the most demanded skill in the data analyst job market, thus making it essential for job seekers.
-4. **Skills with Higher Salaries**: Specialized skills, such as SVN and Solidity, are associated with the highest average salaries, indicating a premium on niche expertise.
-5. **Optimal Skills for Job Market Value**: SQL leads in demand and offers a high average salary, positioning it as one of the most optimal skills for data analysts to learn to maximize their market value.
+1. **Probability of Dying by Location:** The probability of dying  due to covid is high in low income countries. Continentwise the Africa has the highest probability of dying if infected with covid, while Oceania has the least. This may be due to limited access to health facilities, low levels of awareness about the precationary measures.
+2. **Probability of Dying by Year:** The probability of dying due to covid is the highest in the year 2020. This was due to the fact that the medical fraternaty and the masses had limited to no knowledge of the disease in the starting year of the pandemic.
+
+3. **Probability of Contracting Covid by Location:** The likelihood of contracting covid infection is significantly high in the high income countries. This may be due to the higher population desnsity in the major population centers in the developed world. 
+
+The infection rate in case of oceania is the lowest amoung all the continents which points to the fact that geographical location and mobility across countries plays a crucial role in the infection rate.
+
+4. **Probabilty of Contracting Covid Infection by Year:** The probability of contracting is the highest in the year 2020. This may be due to the fact that there were no precautinary protocls, covid vaccination was not introduced, and the medicial treatment was not standardized.  
+
+5. **Number of Deaths by Location:** Continentwise Europe and Asia has the highest number of deaths while Africa and Oceania has the lowest. Income wise the high income countries has the highest number of deaths while the low income countries had the lowest. One of the reason may be that the infection rate was the highest in the high income countries which may have been to higher population densities of the major population centers in the developed countries. Furthermore the high infection rate in the high income countries may have overwhelmed the hospitals and health facilities in these countries.
+
+6. **Vaccination by Location:** The low income countries have the lowest percent of population infected as compared to the high or middle income countries. This may be due to the fact that the high income countries had greater access to the vaccines or the dearth of health facilities may have contributed to lower vaccination rates.
 
 ### Closing Thoughts
 
-This project enhanced my SQL skills and provided valuable insights into the data analyst job market. The findings of the analysis serve as a guide for prioritizing skill development and job search efforts by job seekers. 
-
-Aspiring data analysts can better position themselves in the job market by focusing on high-demand, high-salary skills. 
+This project enhanced my SQL skills and provided valuable insights into the covid pandemic. The insights obtained may help the stakeholders to make informed decisions. 
