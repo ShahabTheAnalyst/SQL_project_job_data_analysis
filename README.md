@@ -4,13 +4,11 @@ In this project, I explore top-paying jobs, in-demand skills, and high-salary jo
 SQL queries? Check them out here: [project_sql folder](/project_sql/)
 
 # Background
-This analysis intends to explore the available data on data roles job market.
-In this project I will unearth insights into highly paid jobs, skills, and job postings, to enable job seekers to find optimal jobs.
-Furthermore, the insights will also help prospective data nerds to develop or improve their skills as per the requirements of the job market.
+This analysis explores the data roles job market, uncovering insights into highly paid jobs, skills, and job postings to help job seekers find optimal jobs. Additionally, the insights aid prospective data enthusiasts in developing or improving their skills according to job market demands.
 
-Data can be downloaded from here:  [Data](https://1x1kjh-my.sharepoint.com/:f:/g/personal/kenpeter_1x1kjh_onmicrosoft_com/El8IOEmbvuJOjNlHCj2jAe0B4IvqKvPyj52v6mWw7ctIkQ?e=aXy4TG). It contains information on data roles, salaries, locations, and other related information.
+**Data:** Download the dataset [here](https://1x1kjh-my.sharepoint.com/:f:/g/personal/kenpeter_1x1kjh_onmicrosoft_com/El8IOEmbvuJOjNlHCj2jAe0B4IvqKvPyj52v6mWw7ctIkQ?e=aXy4TG). It contains information on data roles, salaries, locations, and other relevant details.
 
-### The questions I wanted to answer through my SQL queries were:
+# Research Questions
 
 1. What are the top 10 best-paid remote data analyst jobs?
 2. What are the top 10 best-paying companies for remote data analyst jobs? 
@@ -23,18 +21,18 @@ Data can be downloaded from here:  [Data](https://1x1kjh-my.sharepoint.com/:f:/g
 8. What is the breakdown of job postings by job type?
 
 # Tools Used
-To analyze the data and to answer the above-mentioned questions I used the following tools:
 
 - **SQL:** It allowed and facilitated creating and then querying the database to gain insights into the data.
-- **PostgreSQL:** This database management system, was chosen for handling exploring, and analyzing the data.
+- **PostgreSQL:** Database management system used for handling, exploring, and analyzing the data.
 - **Microsoft Power BI:** For visualizing the output of the SQL queries.
 - **Visual Studio Code:** For executing SQL queries.
 
 # Analysis
-The database was created and analyzed to investigate different aspects of the data to answer the above-mentioned questions.:
 
-### 1. Best-paid remote data analyst jobs
+## 1. Best-paid remote data analyst jobs
 To identify the best-paid remote data analyst jobs, I filtered data analyst postings by average yearly salary and location, focusing on remote jobs. The output of the query highlights the best-paid remote data analyst postings.
+
+**SQL Query:**
 
 ```sql
 SELECT  
@@ -51,7 +49,7 @@ ORDER BY
 LIMIT 10;
 ```
 
-- **Query Result**
+**Query Result:**
 
     | job_title                                         | salary_year_avg   |
     |---------------------------------------------------|-------------------|
@@ -67,17 +65,20 @@ LIMIT 10;
     | ERM Data Analyst                                  | 184000.0          |
 
 
-
 **Insights:**
+
 - **Salary Range:** The salary ranges from $184,000 to $650,000, indicating significant variation.
 - **Diverse Employers:** Companies like SmartAsset, Meta, and AT&T are among those offering high salaries.
 - **Job Title Variety:** There's a high diversity in job titles, from Data Analyst to Director of Analytics, reflecting varied roles and specializations within data analytics.
 
+**Visual:**
 ![Top Paying Roles](charts/1_best_paid_jobs.png)
 *The bar chart visualizes the salary of the 10 best-paid remote data analyst job postings.*
 
-### 2. Best Paying Companies
+## 2. Best Paying Companies
 To gain an insight into the salary paid by companies, I used common table expressions (CTE) and JOIN statements to gain insights into the top 10 companies that offer the highest average annual salary to remote data analysts.
+
+**SQL Query:**
 
 ```sql
 WITH top_paying_jobs AS (
@@ -109,7 +110,8 @@ ORDER BY
     avg_salary DESC
 LIMIT 10;
 ```
-- **Query Result**
+
+**Query Result:**
 
     | company_name                                      | avg_salary    |
     |---------------------------------------------------|---------------|
@@ -124,27 +126,26 @@ LIMIT 10;
     | Plexus Resource Solutions                         |  165000       |
     | CEDARS-SINAIPlexus Resource Solutions             |  163500       |
 
-
     *Top 10 Best Paying Companies*
 
-
-The output of the query provides the following insights:
+**Insights:**
 
 - **Top-paying Companies:**
-AT&T has the highest average salary at $255,830.
-Pinterest Job Advertisements follow closely with an average salary of $232,423.
-UCLA Health Careers ranks third with an average salary of $217,000.
+AT&T has the highest average salary at $255,830. Pinterest Job Advertisements follow closely with an average salary of $232,423.
 - **Range of Salaries:**
-Salaries range from $163,500 at Cedars-Sinai to $255,830 at AT&T, indicating a significant variance in salary.
+Salaries range from $163,500 at Cedars-Sinai to $255,830 at AT&T, indicating a significant variance.
 - **Industry Representation:**
 The list includes companies from various sectors such as telecommunications (AT&T), technology (Pinterest, SmartAsset), healthcare (UCLA Health, Cedars-Sinai), staffing solutions (A-Line Staffing, Plexus Resource), and more.
 
+**Visual:**
 ![Top 10 Best Paying Companies](charts/2_top_paying_companies.png)
 
 
-### 3. Top Demanded Skills for Data Analysts
+## 3. Top Demanded Skills for Data Analysts
 
-The objective is to query the data to gain insights that can help individuals prioritize their skill development efforts based on the current demand in the job market. 
+The objective is to query the data to gain insights that can help individuals prioritize their skill development efforts based on the current market demand. 
+
+**SQL Query:**
 
 ```sql
 SELECT 
@@ -162,7 +163,7 @@ ORDER BY
     demand_count DESC
 LIMIT 5;
 ```
-- **Query Result**
+**Query Result**
 
     | Skills   | Demand Count |
     |----------|--------------|
@@ -174,7 +175,7 @@ LIMIT 5;
 
     *Top 5 in-demand data analyst skills*
 
-The output of the query offers the following insights:
+**Insights:**
 
 - **SQL:**
 SQL is the most in-demand skill. This indicates a strong appetite for skills in database management and data querying, indicating a strong demand for handling and analyzing data stored in relational databases.
@@ -191,10 +192,14 @@ This shows a strong demand for skills, indicating the importance of presenting d
 Power BI has a demand count of 2,609, making it the least in demand among the listed skills.
 However, it still represents a substantial need for skills in Microsoft's business intelligence and analytics platform, particularly for data visualization and reporting tasks.
 
+**Visual:**
+
 ![Top 5 In-Demand Skills](charts/3_top_demanded_skills.png)
 
-### 4. Best Paid Skills
-Here I want to query the data to gain insights into the skills and their respective average salaries, providing valuable information for professionals looking to enhance their expertise or make informed decisions about career paths and skill development strategies.
+## 4. Best Paid Skills
+To gain insights into the skills and their respective average salaries, providing valuable information for professionals looking to enhance their expertise or make informed career decisions.
+
+**SQL Query:**
 
 ```sql
 SELECT 
@@ -213,7 +218,7 @@ ORDER BY
     avg_salary DESC
 LIMIT 10;
 ```
-- **Query Result**
+**Query Result:**
 
     | Skills        | Average Salary ($) |
     |---------------|-------------------:|
@@ -231,7 +236,8 @@ LIMIT 10;
     
 The results of the query offer the following insights:
 
-- **Top-Paying Skills:**
+**Top-Paying Skills:**
+
 PySpark stands out as the highest-paying skill, with an average salary of $208,172.
 This indicates a strong demand for professionals skilled in big data processing and analytics.
 - **Skills with Moderate Demand and Decent Salaries:**
@@ -241,11 +247,15 @@ While these skills may not have the highest average salaries, they still command
 Infrastructure and data-related skills like Linux, PostgreSQL, GCP (Google Cloud Platform), and MicroStrategy are also represented in the dataset, with average salaries ranging from $121,619 to $136,508.
 These skills are foundational in many industries, highlighting the continued importance of maintaining and analyzing data, managing cloud infrastructure, and leveraging business intelligence tools for decision-making.
 
+**Visual:**
+
 ![Top 10 Best Paid Skills](charts/4_best_paid_skills.png)
 
-### 5. Most Optimal Skills to Learn
+## 5. Most Optimal Skills to Learn
 
-Here the objective is to gain insights that can help professionals to prioritize their skill development efforts based on market demand and potential salary outcomes. Additionally, they provide valuable information for employers seeking to recruit talent with specific skill sets.
+To help professionals prioritize their skill development efforts based on market demand and potential salary outcomes.
+
+**SQL Query:**
 
 ```sql
 SELECT 
@@ -270,7 +280,8 @@ ORDER BY
 LIMIT 25;
 
 ```
-- **Query Result**
+
+**Query Result:**
 
 | Skill ID | Skills     | Demand Count | Average Salary ($) |
 |----------|------------|--------------|-------------------:|
@@ -285,13 +296,13 @@ LIMIT 25;
 | 194      | ssis       | 12           |            106,683 |
 | 233      | jira       | 20           |            104,918 |
 
-*The most optimal skills for a data analyst (by salary)*
 
-The output of the query provides the following insights:
+**Insights:**
 
 - **Snowflake and Azure are Highly Demanded with Decent Salaries:**
 Snowflake and Azure are the most in-demand skills with demand counts of 37 and 34 respectively.
 Despite not having the highest average salaries, they offer decent compensation, with Snowflake at $112,948 and Azure at $111,225 on average.
+
 - **Python and R Dominate Demand with Moderate Salaries:**
 Python and R exhibit high demand with demand counts of 236 and 148 respectively.
 While their average salaries are not the highest in the dataset, they still offer moderate compensation, with Python at $101,397 and R at $100,499 on average.
@@ -299,11 +310,14 @@ While their average salaries are not the highest in the dataset, they still offe
 - **Tableau Shows High Demand with Competitive Salary:**
 Tableau has a significant demand count of 230, indicating a strong need for data visualization skills.
 Despite not having the highest average salary, Tableau offers competitive compensation at $99,288 on average.
+
 This highlights the importance of data visualization tools in conveying insights and aiding decision-making processes.
 
-### 6. Top Countries by Job Postings 
+## 6. Countries with the Highest Numbers of Job Postings 
 
-Here I want to gain insights into the data to understand the distribution of job opportunities across different countries or regions.
+To uncover the countries with the most opportunities for data analysts.
+
+**SQL Query**
 
 ```sql 
 SELECT
@@ -330,7 +344,7 @@ ORDER BY
 LIMIT 10;
 ```
 
-- **Query Result**
+**Query Result:**
 
 | location     | job_postings   |
 |--------------|----------------|
@@ -345,7 +359,7 @@ LIMIT 10;
 | Philippines  | 4152           |
 | Netherlands  | 3948           |
 
-The result of the query provides the following insights:
+**Insights:**
 
 - **US Dominates Job Postings:**
 The United States (US) leads with the highest number of job postings at 69,535.
@@ -360,11 +374,15 @@ This indicates strong job markets in these countries, reflecting their economic 
 Singapore, India, and the Philippines represent significant job markets in the Asia-Pacific region, with 6,578, 5,047, and 4,152 job postings respectively.
 This highlights the growing importance of the Asia-Pacific region in global business and employment, driven by factors such as economic growth, technological innovation, and globalization.
 
+**Visual:**
+
 ![Top 10 Location by Job Postihngs](charts/6_top_countries_by_job_postings.png)
 
-### 7. Top Job Portals/Platforms 
+## 7. Top Job Portals 
 
-Here I query the data to gain insights for job seekers and employers, helping them understand the landscape of job boards and where to focus their efforts for job searching or posting vacancies.
+To identify the top job portals for data analyst positions, enabling job seekers to focus their search efforts effectively.
+
+**SQL Query:**
 
 ```sql
 SELECT
@@ -382,7 +400,7 @@ ORDER BY
 LIMIT 5;
 ```
 
-- **Query Result**
+**Query Result:**
 
 | job_board     | job_postings  |
 |---------------|---------------|
@@ -392,7 +410,7 @@ LIMIT 5;
 |Ladders        |517            |
 |ZipRecruiter   |356            |
 
-The result of the query provides the following insights:
+**Insights:**
 
 - **Indeed and Ai-Jobs Lead in Job Postings:**
 "Indeed" and "Ai-Jobs" are the top two job boards, with 1,144 and 1,106 postings respectively.
@@ -405,11 +423,15 @@ LinkedIn is a prominent platform for professional networking and job searching.
 - **ZipRecruiter Shows Moderate Activity:**
 "ZipRecruiter" has 356 postings, representing a moderate level of activity compared to the top four job boards.
 
+**Visual:**
+
 ![Top Job Boards](charts/7_top_job_portals.png)
 
-### 8. Postings by Job Types 
+## 8. Breakdown of Job Postings by Job Types 
 
-Next, I want to highlight the type of job opportunities available, to cater to the preferences, career stages, and employment needs of the job seekers.
+To understand the distribution of job types within the data analyst field, helping job seekers align their preferences with market trends.
+
+**SQL Query:**
 
 ```sql
 SELECT
@@ -427,7 +449,8 @@ GROUP BY
 ORDER BY
     job_postings DESC;
 ```
-- **Query Result**
+
+**Query Result:**
 
 | job_type      | job_postings  |
 |---------------|---------------|
@@ -437,31 +460,24 @@ ORDER BY
 | Part-time     | 8472          |
 | Temp          | 2367          |
 
-The output of the query provides the following insights.
+**Insights:**
 
-- **Full-time jobs dominate:** With over 718,000 job postings, full-time positions constitute the majority of the listings. This suggests that there is a significant demand for full-time employment opportunities.
-- **Contractor roles:** While not as numerous as full-time positions, contractor roles still show a substantial presence with over 37,000 postings. This indicates a demand for temporary or project-based work arrangements.
-- **Internship opportunities:** Internships, with around 8,757 postings, represent a smaller but still noteworthy segment of the job market. This suggests that there are opportunities for individuals seeking to gain practical experience or explore specific industries.
-- **Part-time positions:** Part-time jobs, with approximately 8,472 postings, show a similar volume to internships. This indicates that there is a demand for flexible work arrangements or supplementary income opportunities.
-- **Temporary positions:** Temp roles, with around 2,367 postings, represent the smallest segment in this dataset. However, they still signify a need for short-term staffing solutions, likely in industries with fluctuating demands or seasonal requirements.
+- **Dominance of Full-time Jobs:** Full-time positions constitute the majority with 718,000.
+- **Other Job Types:** Contract, internship, part-time, and temporary roles also present substantial opportunities, catering to different employment preferences.
+**Visual:**
 
 ![Top 10 Location by Job Postihngs](charts/8_job_postings_by_type.png)
 
 # Conclusion
+This project offers comprehensive insights into the data analyst job market, including top-paying jobs, skills, countries, job portals, and job types. These insights are valuable for job seekers and professionals looking to align their skills and efforts with market demand and opportunities.
 
-## Key Insights
-Based on the analysis, the key insights are:
 
-1. **Top-Paying Data Analyst Jobs**: The highest-paying jobs for data analysts that allow remote work offer a wide range of salaries, the highest at $650,000!
-2. **Skills for Top-Paying Jobs**: High-paying data analyst jobs require advanced proficiency in SQL, suggesting it’s a critical skill for earning a top salary.
-3. **Most In-Demand Skills**: SQL is also the most demanded skill in the data analyst job market, thus making it essential for job seekers.
-4. **Skills with Higher Salaries**: Specialized skills, such as SVN and Solidity, are associated with the highest average salaries, indicating a premium on niche expertise.
-5. **Optimal Skills for Job Market Value**: SQL leads in demand and offers a high average salary, positioning it as one of the most optimal skills for data analysts to learn to maximize their market value.
+## Closing Thoughts
 
-### Closing Thoughts
+This project has been a rewarding journey, significantly enhancing my SQL skills while providing deep insights into the dynamic data analyst job market. The analysis unveiled crucial information on top-paying jobs, essential skills, and the global landscape of job postings.
 
-This project enhanced my SQL skills and provided valuable insights into the data analyst job market. The findings of the analysis serve as a guide for prioritizing skill development and job search efforts by job seekers. 
+By leveraging these insights, job seekers can tailor their skill development and job search strategies to align with market demands, ensuring a better fit for high-paying opportunities. This project not only facilitated my understanding of the job market but also served as a practical application of SQL to extract meaningful data-driven insights.
 
-Aspiring data analysts can better position themselves in the job market by focusing on high-demand, high-salary skills. 
+For any further questions or queries, feel free to reach out.
 
 
